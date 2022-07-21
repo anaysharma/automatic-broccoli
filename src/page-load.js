@@ -46,7 +46,7 @@ function handleClick () {
 	} else if (id === "menu") {
 		contentSwap(menu(), id);
 	} else if (id === "contact") {
-		// toggleActiveButton(id);
+		contentSwap(contact(), id);
 	}
 }
 
