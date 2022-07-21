@@ -2,7 +2,8 @@ import './style.css';
 import {navBarCreator} from './page-load.js';
 
 const content = document.getElementById("content");
-
+const body = document.body;
 window.onload = () => {
-	document.body.appendChild(navBarCreator()).appendChild(content);
+	body.appendChild(navBarCreator());
+	body.appendChild(content);
 };

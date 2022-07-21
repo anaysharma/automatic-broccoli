@@ -129,6 +129,17 @@ eval("\n\n//# sourceURL=webpack://automatic-broccoli/./src/contact.js?");
 
 /***/ }),
 
+/***/ "./src/createEl.js":
+/*!*************************!*\
+  !*** ./src/createEl.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"makeElement\": () => (/* binding */ makeElement)\n/* harmony export */ });\nfunction makeElement(element, className, innerText = \"\") {\n\tconst item = document.createElement(element);\n\titem.classList.add(className);\n\tif (innerText !== \"\") {\n\t\titem.innerText = innerText;\n\t}\n\treturn item;\n}\n\n//# sourceURL=webpack://automatic-broccoli/./src/createEl.js?");
+
+/***/ }),
+
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
@@ -136,7 +147,7 @@ eval("\n\n//# sourceURL=webpack://automatic-broccoli/./src/contact.js?");
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"home\": () => (/* binding */ home)\n/* harmony export */ });\n/* harmony import */ var _images_chef_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/chef.jpg */ \"./src/images/chef.jpg\");\n\n\nlet titleContent = \"Welcome to the finest cousine of your area.\";\nlet info = \"relaxed fine dining restaurant set in the historic rooms of the Grade II-listed Shoreditch Town Hall, London.\\n\\nLed by Chef-Patron Isaac McHale, we serve a seasonal tasting menu featuring modern, elegant dishes rooted in technique but stripped back to their essential elements. We place a great emphasis on sourcing the best produce the British Isles has to offer, showcased in dishes inspired by Isaac’s culinary memories and travels.\"\n\nfunction craftElement (className, element, innerText = \"\") {\n\tconst item = document.createElement(element);\n\titem.classList.add(className);\n\titem.innerText = innerText;\n\treturn item;\n}\n\nfunction home () {\n\tconst title = craftElement(\"title\", \"h2\", titleContent);\n\tconst backPanel = craftElement(\"container\", \"div\");\n\tconst description = craftElement(\"description\", \"p\", info);\n\tconst chefImage = new Image();\n\tchefImage.src = _images_chef_jpg__WEBPACK_IMPORTED_MODULE_0__;\n\n\tbackPanel.appendChild(title);\n\tbackPanel.appendChild(chefImage);\n\tbackPanel.appendChild(description);\n\n\treturn backPanel;\n}\n\n\n//# sourceURL=webpack://automatic-broccoli/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"home\": () => (/* binding */ home)\n/* harmony export */ });\n/* harmony import */ var _images_chef_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/chef.jpg */ \"./src/images/chef.jpg\");\n/* harmony import */ var _createEl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createEl.js */ \"./src/createEl.js\");\n\n\n\nlet titleContent = \"Welcome to the finest cousine of your area.\";\nlet info = \"relaxed fine dining restaurant set in the historic rooms of the Grade II-listed Shoreditch Town Hall, London.\\n\\nLed by Chef-Patron Isaac McHale, we serve a seasonal tasting menu featuring modern, elegant dishes rooted in technique but stripped back to their essential elements. We place a great emphasis on sourcing the best produce the British Isles has to offer, showcased in dishes inspired by Isaac’s culinary memories and travels.\"\n\nfunction home () {\n\tconst title = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_1__.makeElement)(\"h2\", \"title\", titleContent);\n\tconst backPanel = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_1__.makeElement)(\"div\", \"container\");\n\tconst description = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_1__.makeElement)(\"p\", \"description\", info);\n\tconst homeContainer = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_1__.makeElement)(\"div\", \"home-container\");\n\tconst chefImage = new Image();\n\tchefImage.src = _images_chef_jpg__WEBPACK_IMPORTED_MODULE_0__;\n\n\tbackPanel.appendChild(title);\n\tbackPanel.appendChild(chefImage);\n\tbackPanel.appendChild(description);\n\thomeContainer.appendChild(backPanel);\n\treturn homeContainer;\n}\n\n//# sourceURL=webpack://automatic-broccoli/./src/home.js?");
 
 /***/ }),
 
@@ -147,7 +158,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _page_load_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load.js */ \"./src/page-load.js\");\n\n\n\nconst content = document.getElementById(\"content\");\n\nwindow.onload = () => {\n\tdocument.body.appendChild((0,_page_load_js__WEBPACK_IMPORTED_MODULE_1__.navBarCreator)()).appendChild(content);\n};\n\n//# sourceURL=webpack://automatic-broccoli/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _page_load_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load.js */ \"./src/page-load.js\");\n\n\n\nconst content = document.getElementById(\"content\");\nconst body = document.body;\nwindow.onload = () => {\n\tbody.appendChild((0,_page_load_js__WEBPACK_IMPORTED_MODULE_1__.navBarCreator)());\n\tbody.appendChild(content);\n};\n\n//# sourceURL=webpack://automatic-broccoli/./src/index.js?");
 
 /***/ }),
 
@@ -155,9 +166,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /*!*********************!*\
   !*** ./src/menu.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://automatic-broccoli/./src/menu.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menu\": () => (/* binding */ menu)\n/* harmony export */ });\n/* harmony import */ var _images_1_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/1.jpg */ \"./src/images/1.jpg\");\n/* harmony import */ var _images_2_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/2.jpg */ \"./src/images/2.jpg\");\n/* harmony import */ var _images_3_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/3.jpg */ \"./src/images/3.jpg\");\n/* harmony import */ var _images_9_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./images/9.jpg */ \"./src/images/9.jpg\");\n/* harmony import */ var _images_5_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/5.jpg */ \"./src/images/5.jpg\");\n/* harmony import */ var _images_6_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/6.jpg */ \"./src/images/6.jpg\");\n/* harmony import */ var _images_7_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/7.jpg */ \"./src/images/7.jpg\");\n/* harmony import */ var _images_8_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/8.jpg */ \"./src/images/8.jpg\");\n/* harmony import */ var _createEl_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./createEl.js */ \"./src/createEl.js\");\n\n\n\n\n\n\n\n\n\n\nlet imageList = [ _images_1_jpg__WEBPACK_IMPORTED_MODULE_0__, _images_2_jpg__WEBPACK_IMPORTED_MODULE_1__, _images_3_jpg__WEBPACK_IMPORTED_MODULE_2__, _images_9_jpg__WEBPACK_IMPORTED_MODULE_3__, _images_5_jpg__WEBPACK_IMPORTED_MODULE_4__, _images_6_jpg__WEBPACK_IMPORTED_MODULE_5__, _images_7_jpg__WEBPACK_IMPORTED_MODULE_6__, _images_8_jpg__WEBPACK_IMPORTED_MODULE_7__ ];\nlet randomText = \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\";\n\nfunction createCard (img, dish) {\n\tconst dishImg = new Image();\n\tdishImg.src = img;\n\tconst card = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"div\", \"card\");\n\tconst dishName = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"h3\", \"dish-title\", dish);\n\tconst description = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"p\", \"item-info\", randomText);\n\tconst cardItem = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"div\", \"item\");\n\tconst button = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"button\", \"buy-button\");\n\tbutton.textContent = \"Get\";\n\tconst imgContainer = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"div\", \"image\");\n\n\tcardItem.appendChild(dishName);\n\tcardItem.appendChild(description);\n\tcardItem.appendChild(button);\n\timgContainer.appendChild(dishImg);\n\tcard.appendChild(imgContainer);\n\tcard.appendChild(cardItem);\n\n\treturn card;\n}\n\nfunction menu () {\n\tconst container = (0,_createEl_js__WEBPACK_IMPORTED_MODULE_8__.makeElement)(\"div\", \"menu-container\");\n\tfor (let i = 1; i < 9; i++) {\n\t\tcontainer.appendChild(createCard(imageList[i-1], `Dish ${i}`));\n\t}\n\treturn container;\n}\n\n//# sourceURL=webpack://automatic-broccoli/./src/menu.js?");
 
 /***/ }),
 
@@ -168,7 +180,95 @@ eval("\n\n//# sourceURL=webpack://automatic-broccoli/./src/menu.js?");
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"navBarCreator\": () => (/* binding */ navBarCreator),\n/* harmony export */   \"tabCreator\": () => (/* binding */ tabCreator)\n/* harmony export */ });\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_menu_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact.js */ \"./src/contact.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_contact_js__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nfunction tabCreator (id) {\n\tconst button = document.createElement(\"button\");\n\tbutton.setAttribute(\"id\", id);\n\tbutton.setAttribute(\"name\", id);\n\tbutton.textContent = id;\n\tbutton.addEventListener(\"click\", handleClick);\n\treturn button;\n}\n\nfunction handleClick () {\n\tif (this.id === \"home\") {\n\t\tcontent.appendChild((0,_home_js__WEBPACK_IMPORTED_MODULE_0__.home)());\n\t} else {\n\t\tconsole.log(this.id);\n\t}\n}\n\nfunction navBarCreator () {\n\tconst navBar = document.createElement(\"nav\");\n\tconst homeButton = tabCreator(\"home\");\n\tconst menuButton = tabCreator(\"menu\");\n\tconst contactButton = tabCreator(\"contact\");\n\tconst heading = document.createElement(\"h2\");\n\tconst buttonBox = document.createElement(\"div\");\n\n\tnavBar.classList.add(\"nav-bar\");\n\tbuttonBox.classList.add(\"button-box\");\n\theading.textContent = \"Auto Broccoli!\";\n\n\tbuttonBox.appendChild(homeButton);\n\tbuttonBox.appendChild(menuButton);\n\tbuttonBox.appendChild(contactButton);\n\tnavBar.appendChild(heading);\n\tnavBar.appendChild(buttonBox);\n\n\treturn navBar;\n}\n\n//# sourceURL=webpack://automatic-broccoli/./src/page-load.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"navBarCreator\": () => (/* binding */ navBarCreator)\n/* harmony export */ });\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact.js */ \"./src/contact.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_contact_js__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nfunction tabCreator (id) {\n\tconst button = document.createElement(\"button\");\n\tbutton.setAttribute(\"id\", id);\n\tbutton.setAttribute(\"name\", id);\n\tbutton.classList.add(\"nav-button\");\n\tbutton.textContent = id;\n\tbutton.addEventListener(\"click\", handleClick);\n\treturn button;\n}\n\nfunction toggleActiveButton (id) {\n\tlet el = document.getElementById(id);\n\tswitch (id) {\n\t\tcase \"home\":\n\t\t\tel.nextSibling.classList.remove(\"active\");\n\t\t\tel.nextSibling.nextSibling.classList.remove(\"active\");\n\t\t\tbreak;\n\t\tcase \"menu\" :\n\t\t\tel.nextSibling.classList.remove(\"active\");\n\t\t\tel.previousSibling.classList.remove(\"active\");\n\t\t\tbreak;\n\t\tcase \"contact\" :\n\t\t\tel.previousSibling.classList.remove(\"active\");\n\t\t\tel.previousSibling.previousSibling.classList.remove(\"active\");\n\t\t\tbreak;\n\t\tdefault:\n\t\t\tbreak;\n\t}\n\tel.classList = \".nav-button active\";\n}\n\nfunction contentSwap (itm, id) {\n\tcontent.innerHTML = \"\";\n\tcontent.appendChild(itm);\n\ttoggleActiveButton(id);\n}\n\nfunction handleClick () {\n\tlet id = this.id;\n\tif (id === \"home\") {\n\t\tcontentSwap((0,_home_js__WEBPACK_IMPORTED_MODULE_0__.home)(), id);\n\t} else if (id === \"menu\") {\n\t\tcontentSwap((0,_menu_js__WEBPACK_IMPORTED_MODULE_1__.menu)(), id);\n\t} else if (id === \"contact\") {\n\t\t// toggleActiveButton(id);\n\t}\n}\n\nfunction navBarCreator () {\n\tconst navBar = document.createElement(\"nav\");\n\tconst homeButton = tabCreator(\"home\");\n\tconst menuButton = tabCreator(\"menu\");\n\tconst contactButton = tabCreator(\"contact\");\n\tconst heading = document.createElement(\"h2\");\n\tconst buttonBox = document.createElement(\"div\");\n\n\tnavBar.classList.add(\"nav-bar\");\n\thomeButton.classList.add(\"active\");\n\tbuttonBox.classList.add(\"button-box\");\n\theading.textContent = \"Auto Broccoli!\";\n\n\tbuttonBox.appendChild(homeButton);\n\tbuttonBox.appendChild(menuButton);\n\tbuttonBox.appendChild(contactButton);\n\tnavBar.appendChild(heading);\n\tnavBar.appendChild(buttonBox);\n\tcontent.appendChild((0,_home_js__WEBPACK_IMPORTED_MODULE_0__.home)());\n\n\treturn navBar;\n}\n\n//# sourceURL=webpack://automatic-broccoli/./src/page-load.js?");
+
+/***/ }),
+
+/***/ "./src/images/1.jpg":
+/*!**************************!*\
+  !*** ./src/images/1.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"558e11b09b32bb0d5ad1.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/1.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/2.jpg":
+/*!**************************!*\
+  !*** ./src/images/2.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"9be565fbb85a3e66fc6d.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/2.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/3.jpg":
+/*!**************************!*\
+  !*** ./src/images/3.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"40eb0a736223afbfbea7.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/3.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/5.jpg":
+/*!**************************!*\
+  !*** ./src/images/5.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"4f838b35b0fd6863de5a.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/5.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/6.jpg":
+/*!**************************!*\
+  !*** ./src/images/6.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"03265da9be6d9da27447.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/6.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/7.jpg":
+/*!**************************!*\
+  !*** ./src/images/7.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"847ebb599e20accde4ce.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/7.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/8.jpg":
+/*!**************************!*\
+  !*** ./src/images/8.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"b651c231e7a7e885a35a.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/8.jpg?");
+
+/***/ }),
+
+/***/ "./src/images/9.jpg":
+/*!**************************!*\
+  !*** ./src/images/9.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"44d45d2af6f0aa4f7471.jpg\";\n\n//# sourceURL=webpack://automatic-broccoli/./src/images/9.jpg?");
 
 /***/ }),
 
