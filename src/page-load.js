@@ -63,8 +63,8 @@ export function navBarCreator () {
 	navBar.classList.add("nav-bar");
 	homeButton.classList.add("active");
 	buttonBox.classList.add("button-box");
+// yeah yeah, I know, dump Brand name. don't face palm so hard.
 	heading.textContent = "Auto Broccoli!";
-
 	buttonBox.appendChild(homeButton);
 	buttonBox.appendChild(menuButton);
 	buttonBox.appendChild(contactButton);

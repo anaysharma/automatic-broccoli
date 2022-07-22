@@ -71,7 +71,7 @@ body {
 }
 
 #content {
-	width: 100vw;
+	width: 100%;
 	display: grid;
 	justify-items: center;
 }
@@ -84,12 +84,15 @@ nav.nav-bar {
 	height: 6rem;
 	background-color: var(--color-brown-dark);
 	position: fixed;
+	border-bottom: 1px solid var(--color-cream);
 }
 
 button {
 	cursor: pointer;
-	transition: 200ms;
+	transition: 180ms;
 }
+
+
 
 nav button {
 	width: 7rem;
@@ -101,13 +104,18 @@ nav button {
 	border: none;
 }
 
+nav button:active {
+	outline-color: var(--color-brown-light);
+	outline-offset: 0;
+}
+
 button:hover {
-	font-size: 1.2rem;
-	outline: 0.3rem solid var(--color-brown-light);
+	outline-offset: 0.3rem;
+	outline: 0.3rem solid var(--color-cream);
 }
 
 nav h2 {
-	padding: 0.5rem 1rem;
+	padding: 0.6rem 1rem;
 	color: var(--color-brown-dark);
 	font-family: var(--font-heading);
 	background-color: var(--color-cream);
@@ -131,8 +139,8 @@ div.button-box {
 
 .active {
 	box-shadow:
-	0 0.7rem 0 -0.4rem var(--color-brown-dark),
-	0 0.9rem 0 -0.4rem white;
+	0 1rem 0 var(--color-brown-dark),
+	0 1.7rem 0 -0.4rem white;
 }
 
 div.home-container {
@@ -182,15 +190,15 @@ div.home-container > .container > * {
 }
 
 div.menu-container {
-	width: 100vw;
+	width: 100%;
 	display: grid;
-	height: 93rem;
+	height: 96rem;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, 20rem);
 	grid-column-gap: 2rem;
 	grid-row-gap: 2rem;
 	background-color: var(--color-brown-dark);
-	padding: 7rem 2rem 2rem 2rem;
+	padding: 8rem 2rem 2rem 2rem;
 }
 
 .card {
@@ -202,7 +210,8 @@ div.menu-container {
 }
 
 .card:hover {
-	transform: translateY(-0.8rem);
+	outline: 0.3rem solid var(--color-cream);
+	outline-offset: 0.3rem;
 }
 
 .dish-image {
@@ -241,6 +250,7 @@ div.menu-container {
 	margin-inline-start: 2rem;
 	width: calc(100% - 4rem);
 	height: 4rem;
+	font-size: 1.2rem;
 }
 
 .buy-button:hover {
@@ -248,9 +258,106 @@ div.menu-container {
 	outline-offset: 0.3rem;
 }
 
+.buy-button:active {
+	outline-offset: 0;
+}
+
 .item-info {
 	font-size: 1.2rem;
 	font-family: var(--font-title);
+}
+
+div.contact-container {
+	margin-top: 6rem;
+	width: 100%;
+	display: flex;
+	justify-items: space-between;
+	height: calc(100vh - 9rem);
+	background-color: var(--color-brown-dark);
+}
+
+.left {
+	height: calc(100vh - 9rem);
+	width: 40vw;
+	overflow: hidden;
+}
+
+.left > img {
+	width: 40vw;
+}
+
+.form-container {
+	width: 100%;
+	color: var(--color-cream);
+	display: grid;
+	grid-template-rows: 7rem 1fr;
+	padding: 2rem 4rem;
+}
+
+form {
+	display: grid;
+	font-family: var(--font-heading);
+	grid-template-rows: 1fr 7rem;
+}
+
+.form-heading {
+	font-family: var(--font-body);
+	font-size: 2.4rem;
+	display: flex;
+	align-items: center;
+}
+
+fieldset {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+}
+
+fieldset > div {
+	display: flex;
+	align-items: center;
+	column-gap: 2rem;
+	width: 50vw;
+	justify-content: space-between;
+}
+
+label {
+	font-size: 2rem;
+}
+
+input {
+	height: 3rem;
+	border: none;
+	background-color: var(--color-brown-neutral);
+	color: var(--color-cream);
+	border: 1px solid var(--color-cream);
+	padding-inline: 2rem;
+	width: 36rem;
+}
+
+.buttons {
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	column-gap: 2rem;
+}
+
+.buttons > button {
+	width: 7rem;
+	height: 3rem;
+	border: none;
+	background-color: var(--color-cream);
+	font-family: var(--font-title);
+	font-size: 1.2rem;
+}
+
+.buttons > button:hover {
+	outline-color: var(--color-cream);
+	outline-offset: 0.3rem;
+}
+
+.buttons > button:active {
+	outline-offset: 0;
 }
 
 footer {
@@ -261,4 +368,5 @@ footer {
 	color: var(--color-cream);
 	font-size: 0.8rem;
 	font-family: var(--font-title);
+	border-top: 1px solid var(--color-cream);
 }
