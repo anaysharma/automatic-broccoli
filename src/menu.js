@@ -13,6 +13,7 @@ let randomText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
 
 function createCard (img, dish) {
 	const dishImg = new Image();
+	dishImg.classList.add("dish-image");
 	dishImg.src = img;
 	const card = makeElement("div", "card");
 	const dishName = makeElement("h3", "dish-title", dish);

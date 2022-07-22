@@ -30,7 +30,7 @@ function toggleActiveButton (id) {
 		default:
 			break;
 	}
-	el.classList = ".nav-button active";
+	el.classList = "nav-button active";
 }
 
 function contentSwap (itm, id) {
@@ -52,12 +52,14 @@ function handleClick () {
 
 export function navBarCreator () {
 	const navBar = document.createElement("nav");
+	const navBox = document.createElement("div");
 	const homeButton = tabCreator("home");
 	const menuButton = tabCreator("menu");
 	const contactButton = tabCreator("contact");
 	const heading = document.createElement("h2");
 	const buttonBox = document.createElement("div");
 
+	navBox.classList.add("nav-box");
 	navBar.classList.add("nav-bar");
 	homeButton.classList.add("active");
 	buttonBox.classList.add("button-box");
@@ -66,8 +68,9 @@ export function navBarCreator () {
 	buttonBox.appendChild(homeButton);
 	buttonBox.appendChild(menuButton);
 	buttonBox.appendChild(contactButton);
-	navBar.appendChild(heading);
-	navBar.appendChild(buttonBox);
+	navBox.appendChild(heading);
+	navBox.appendChild(buttonBox);
+	navBar.appendChild(navBox);
 	content.appendChild(home());
 
 	return navBar;

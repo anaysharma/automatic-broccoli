@@ -10,6 +10,7 @@ function createFormFeild (className) {
 	const inputDiv = makeElement("div", `input-${className}`);
 	const input = makeElement("input", className);
 	const label = makeElement("label", `label-${className}`, capitalizeFirstLetter(className));
+	
 	input.setAttribute("type", "text");
 	input.setAttribute("name", className);
 	input.setAttribute("placeholder", `Enter ${className}`);

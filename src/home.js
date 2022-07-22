@@ -1,4 +1,4 @@
-import image from './images/chef.jpg';
+import image from './images/chef.png';
 import {makeElement} from './createEl.js';
 
 let titleContent = "Welcome to the finest cousine of your area.";
@@ -9,11 +9,13 @@ export function home () {
 	const backPanel = makeElement("div", "container");
 	const description = makeElement("p", "description", info);
 	const homeContainer = makeElement("div", "home-container");
+	const imgBox = makeElement("div", "image-box");
 	const chefImage = new Image();
 	chefImage.src = image;
 
+	imgBox.appendChild(chefImage);
 	backPanel.appendChild(title);
-	backPanel.appendChild(chefImage);
+	backPanel.appendChild(imgBox);
 	backPanel.appendChild(description);
 	homeContainer.appendChild(backPanel);
 	return homeContainer;
